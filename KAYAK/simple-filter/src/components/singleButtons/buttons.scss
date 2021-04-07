@@ -71,10 +71,13 @@ $fontFamily: Helvetica Neue;
   color: white;
 }
 //the last button (more)
-
+.more-button-container {
+  display: inline-block;
+  width: 80px;
+}
 .more-button {
   background-color: $inactiveBackgroundColor;
-  width: 110px;
+  width: 80px;
   height: $buttonsHeight;
   border-radius: 2px;
   color: $inactiveButtonFontColor;
@@ -89,4 +92,22 @@ $fontFamily: Helvetica Neue;
 .more-button:focus {
   background-color: $activeBackgroundColor;
   color: $activeButtonFontColor;
+}
+
+.arrow {
+  border: solid $inactiveButtonFontColor;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 2px;
+  font-family: $fontFamily;
+  float: right;
+  margin-right: 16px;
+  margin-top: 4px;
+}
+.arrow:focus {
+  border-color: $activeButtonFontColor;
+}
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }

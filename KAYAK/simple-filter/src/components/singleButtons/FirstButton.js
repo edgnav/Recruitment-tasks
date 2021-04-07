@@ -11,7 +11,7 @@ const FirstButton = () => {
   return (
     <button
       onClick={handleChange}
-      class={
+      className={
         isActive === 0
           ? 'first-button-inactive '
           : 'first-button-inactive first-button-active'

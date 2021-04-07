@@ -3,10 +3,11 @@ import './AllButtonsStyle.css';
 import FirstButton from './singleButtons/FirstButton';
 import MiddleButton from './singleButtons/MiddleButton';
 import MoreButton from './singleButtons/MoreButton';
+import { Button } from 'react-bootstrap';
 
 const AllButtons = () => {
   return (
-    <div class="buttons-container">
+    <div className="buttons-container">
       <FirstButton></FirstButton>
       <MiddleButton title={'Small'} price={'$422+'}></MiddleButton>
       <MiddleButton title={'Medium'} price={'$433+'}></MiddleButton>

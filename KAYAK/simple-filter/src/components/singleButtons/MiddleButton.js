@@ -9,16 +9,16 @@ const MiddleButton = ({ title, price }) => {
   return (
     <button
       onClick={handleChange}
-      class={
+      className={
         isActive === 0
           ? 'middle-button-inactive'
           : 'middle-button-inactive middle-button-active'
       }
       style={{ outline: 'none' }}
     >
-      <div class="middle-button-container">
-        <div class="middle-button-medium">{title}</div>
-        <div class="middle-button-numbers">{price}</div>
+      <div className="middle-button-container">
+        <div className="middle-button-medium">{title}</div>
+        <div className="middle-button-numbers">{price}</div>
       </div>
     </button>
   );
