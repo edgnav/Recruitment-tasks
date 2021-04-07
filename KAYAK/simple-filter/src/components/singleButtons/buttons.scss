@@ -22,19 +22,10 @@ $fontFamily: Helvetica Neue;
   border: 1px solid #d9e1e8;
   margin-left: $space3;
 }
+
 .middle-button-active {
   background-color: $activeBackgroundColor;
-  width: $middleButtonWidth;
-  height: $buttonsHeight;
-  border-radius: 2px;
   color: $activeButtonFontColor;
-  padding: 0;
-  font-size: 13px;
-  font-weight: bold;
-  line-height: 16px;
-  border: 1px solid #d9e1e8;
-  margin-left: 2px;
-  outline: none;
 }
 .middle-button-container {
   display: flex;
@@ -61,19 +52,6 @@ $fontFamily: Helvetica Neue;
 }
 
 /*"all" button style*/
-.first-button-active {
-  background-color: #1e93f5;
-  width: 48px;
-  height: $buttonsHeight;
-  border-radius: 2px;
-  color: white;
-  margin-left: 16px;
-  padding: 0;
-  font-size: 13px;
-  font-weight: bold;
-  border: 1px solid #d9e1e8;
-  font-family: $fontFamily;
-}
 
 .first-button-inactive {
   background-color: $inactiveBackgroundColor;
@@ -87,4 +65,28 @@ $fontFamily: Helvetica Neue;
   padding: 0;
   border: 1px solid #d9e1e8;
   font-family: $fontFamily;
+}
+.first-button-active {
+  background-color: #1e93f5;
+  color: white;
+}
+//the last button (more)
+
+.more-button {
+  background-color: $inactiveBackgroundColor;
+  width: 110px;
+  height: $buttonsHeight;
+  border-radius: 2px;
+  color: $inactiveButtonFontColor;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 16px;
+  border: 1px solid #d9e1e8;
+  margin-left: $space3;
+  font-family: $fontFamily;
+}
+.more-button:focus {
+  background-color: $activeBackgroundColor;
+  color: $activeButtonFontColor;
 }

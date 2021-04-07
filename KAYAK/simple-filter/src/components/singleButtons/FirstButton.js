@@ -11,7 +11,11 @@ const FirstButton = () => {
   return (
     <button
       onClick={handleChange}
-      class={isActive === 1 ? 'first-button-active' : 'first-button-inactive'}
+      class={
+        isActive === 0
+          ? 'first-button-inactive '
+          : 'first-button-inactive first-button-active'
+      }
       style={{ outline: 'none' }}
     >
       All
