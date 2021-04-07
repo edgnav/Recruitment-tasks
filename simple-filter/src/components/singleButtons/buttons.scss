@@ -1,28 +1,40 @@
-.middle-button {
-  background-color: white;
-  width: 129px;
-  height: 30px;
+$space1: 16px; //righ and left indentation between middle button content sides
+$space2: 12px; //indentation between middle button title (e.g. medium) and price(e.g. $178+)
+$space3: 2px; //right and left indentation between buttons
+$activeBackgroundColor: #1e93f5;
+$inactiveBackgroundColor: white;
+$middleButtonWidth: 129px;
+$inactiveButtonFontColor: #51697a;
+$activeButtonFontColor: white;
+$buttonsHeight: 30px;
+$fontFamily: Helvetica Neue;
+
+.middle-button-inactive {
+  background-color: $inactiveBackgroundColor;
+  width: $middleButtonWidth;
+  height: $buttonsHeight;
   border-radius: 2px;
-  color: white;
+  color: $inactiveButtonFontColor;
   padding: 0;
   font-size: 13px;
   font-weight: bold;
   line-height: 16px;
   border: 1px solid #d9e1e8;
-  margin-left: 2px;
+  margin-left: $space3;
 }
 .middle-button-active {
-  background-color: red;
-  width: 129px;
-  height: 30px;
+  background-color: $activeBackgroundColor;
+  width: $middleButtonWidth;
+  height: $buttonsHeight;
   border-radius: 2px;
-  color: white;
+  color: $activeButtonFontColor;
   padding: 0;
   font-size: 13px;
   font-weight: bold;
   line-height: 16px;
   border: 1px solid #d9e1e8;
   margin-left: 2px;
+  outline: none;
 }
 .middle-button-container {
   display: flex;
@@ -31,29 +43,48 @@
 .middle-button-medium {
   height: 16px;
   width: 51px;
-  color: #51697a;
-  font-family: Helvetica Neue;
+  font-family: $fontFamily;
   font-size: 13px;
   font-weight: bold;
   line-height: 15px;
+  margin-left: $space1;
 }
 .middle-button-numbers {
   height: 14px;
   width: 34px;
-  color: #51697a;
-  font-family: Helvetica Neue;
+  font-family: $fontFamily;
   font-size: 12px;
   line-height: 14px;
   text-align: right;
+  margin-right: $space1;
+  margin-left: $space2;
 }
 
 /*"all" button style*/
-.first-button {
+.first-button-active {
   background-color: #1e93f5;
   width: 48px;
-  height: 30px;
-  border: none;
+  height: $buttonsHeight;
   border-radius: 2px;
   color: white;
   margin-left: 16px;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+  border: 1px solid #d9e1e8;
+  font-family: $fontFamily;
+}
+
+.first-button-inactive {
+  background-color: $inactiveBackgroundColor;
+  width: 48px;
+  height: $buttonsHeight;
+  border-radius: 2px;
+  color: $inactiveButtonFontColor;
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 16px;
+  padding: 0;
+  border: 1px solid #d9e1e8;
+  font-family: $fontFamily;
 }
