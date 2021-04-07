@@ -2,6 +2,8 @@ import React from 'react';
 import './AllButtonsStyle.css';
 import FirstButton from './singleButtons/FirstButton';
 import MiddleButton from './singleButtons/MiddleButton';
+import MoreButton from './singleButtons/MoreButton';
+
 const AllButtons = () => {
   return (
     <div class="buttons-container">
@@ -11,6 +13,7 @@ const AllButtons = () => {
       <MiddleButton title={'Large'} price={'$456+'}></MiddleButton>
       <MiddleButton title={'SUV'} price={'$525+'}></MiddleButton>
       <MiddleButton title={'Van'} price={'$649+'}></MiddleButton>
+      <MoreButton></MoreButton>
     </div>
   );
 };
