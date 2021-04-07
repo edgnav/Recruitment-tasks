@@ -1,0 +1,59 @@
+.middle-button {
+  background-color: white;
+  width: 129px;
+  height: 30px;
+  border-radius: 2px;
+  color: white;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 16px;
+  border: 1px solid #d9e1e8;
+  margin-left: 2px;
+}
+.middle-button-active {
+  background-color: red;
+  width: 129px;
+  height: 30px;
+  border-radius: 2px;
+  color: white;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 16px;
+  border: 1px solid #d9e1e8;
+  margin-left: 2px;
+}
+.middle-button-container {
+  display: flex;
+  flex-direction: row;
+}
+.middle-button-medium {
+  height: 16px;
+  width: 51px;
+  color: #51697a;
+  font-family: Helvetica Neue;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 15px;
+}
+.middle-button-numbers {
+  height: 14px;
+  width: 34px;
+  color: #51697a;
+  font-family: Helvetica Neue;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+}
+
+/*"all" button style*/
+.first-button {
+  background-color: #1e93f5;
+  width: 48px;
+  height: 30px;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  margin-left: 16px;
+}
