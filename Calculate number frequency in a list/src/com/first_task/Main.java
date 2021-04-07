@@ -1,13 +1,9 @@
 package com.first_task;
-
 import java.util.Arrays;
-import java.util.HashMap;
 
 public class Main {
 
     public static void main(String[] args) {
-        // write your code here
-
 
         int A[] = {1,4,1,5,8,1,3,5,1,4,1,3,7,2};
         int length=A.length;
@@ -80,13 +76,12 @@ public class Main {
     }
 
     public static void PrintMatrix(String[][]matrix,int rows,int cols){
+
         for(int i=0;i<=rows;i++){
             for(int c=0;c<cols;c++){
                 System.out.print(matrix[i][c]);
             }
             System.out.print("\n");
         }
-
     }
-
 }
