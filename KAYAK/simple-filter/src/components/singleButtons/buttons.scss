@@ -89,7 +89,7 @@ $fontFamily: Helvetica Neue;
   margin-left: $space3;
   font-family: $fontFamily;
 }
-.more-button:focus {
+.more-button:hover {
   background-color: $activeBackgroundColor;
   color: $activeButtonFontColor;
 }
@@ -104,10 +104,10 @@ $fontFamily: Helvetica Neue;
   margin-right: 16px;
   margin-top: 4px;
 }
-.arrow:focus {
-  border-color: $activeButtonFontColor;
-}
 .down {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
+}
+.rotate {
+  transform: rotate(180deg) scaleX(-1);
 }
