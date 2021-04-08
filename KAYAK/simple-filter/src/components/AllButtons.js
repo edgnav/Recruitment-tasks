@@ -3,7 +3,6 @@ import './AllButtonsStyle.css';
 import FirstButton from './singleButtons/FirstButton';
 import MiddleButton from './singleButtons/MiddleButton';
 import MoreButton from './singleButtons/MoreButton';
-import { Button } from 'react-bootstrap';
 
 const AllButtons = () => {
   return (

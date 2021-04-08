@@ -70,13 +70,10 @@ $fontFamily: Helvetica Neue;
   color: white;
 }
 //the last button (more)
-.more-button-container {
-  display: inline-block;
-  width: 80px;
-}
+
 .more-button {
   background-color: $inactiveBackgroundColor;
-  width: 80px;
+  min-width: 80px;
   height: $buttonsHeight;
   border-radius: 2px;
   color: $inactiveButtonFontColor;
@@ -87,23 +84,25 @@ $fontFamily: Helvetica Neue;
   border: 1px solid #d9e1e8;
   margin-left: $space3;
   font-family: $fontFamily;
+  display: inline-block;
 }
-.more-button:hover {
+.more-button:focus {
   background-color: $activeBackgroundColor;
   color: $activeButtonFontColor;
 }
-
 .rotate {
+  transform: none;
+}
+.more-button:focus .rotate {
   transform: rotate(180deg) scaleX(-1);
 }
-.dropdown {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 15px;
+
+.more-button-container {
+  height: 30px;
 }
 .dropdown-content {
   margin-top: 10px;
-  display: block;
+  display: none;
   position: absolute;
   background-color: white;
   width: 200px;
@@ -112,7 +111,7 @@ $fontFamily: Helvetica Neue;
   z-index: 1;
   color: $inactiveButtonFontColor;
 }
-.dropdown:hover .dropdown-content {
+.more-button:focus .dropdown-content {
   display: block;
 }
 
@@ -162,4 +161,8 @@ input[type='checkbox'] {
 }
 .dropdown-price {
   margin-left: auto;
+}
+.selected {
+  font-size: 10px;
+  flex-wrap: wrap;
 }
