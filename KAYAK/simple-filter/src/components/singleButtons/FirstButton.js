@@ -4,19 +4,13 @@ import { setSelectedAllButton } from './ButtonsSlice';
 const FirstButton = () => {
   const dispatch = useDispatch();
   const isActive = useSelector((state) => state.buttonsReducer.allButton);
-  const handleChange = () => {
-    isActive === 1
-      ? dispatch(setSelectedAllButton(0))
-      : dispatch(setSelectedAllButton(1));
-  };
-
   return (
     <button
-      onClick={handleChange}
+      onClick={() => dispatch(setSelectedAllButton(!isActive))}
       className={
-        isActive === 0
-          ? 'first-button-inactive '
-          : 'first-button-inactive first-button-active'
+        isActive
+          ? 'first-button-active first-button-inactive '
+          : 'first-button-inactive '
       }
       style={{ outline: 'none' }}
     >

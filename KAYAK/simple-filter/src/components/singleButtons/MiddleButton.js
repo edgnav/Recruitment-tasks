@@ -6,16 +6,14 @@ const MiddleButton = ({ title, price, nth }) => {
   const isActive = useSelector(
     (state) => state.buttonsReducer.middleButtons[nth]
   );
-  const handleChange = () => {
-    isActive === 1
-      ? dispatch(setSelectedMiddleButton({ nth: nth, action: 0 }))
-      : dispatch(setSelectedMiddleButton({ nth: nth, action: 1 }));
-  };
+
   return (
     <button
-      onClick={handleChange}
+      onClick={() =>
+        dispatch(setSelectedMiddleButton({ nth: nth, action: !isActive }))
+      }
       className={
-        isActive === 0
+        !isActive
           ? 'middle-button-inactive middle-button-container'
           : 'middle-button-inactive middle-button-active middle-button-container'
       }

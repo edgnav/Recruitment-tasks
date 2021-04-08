@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 export const buttonsSlice = createSlice({
   name: 'buttons',
   initialState: {
-    allButton: 0,
-    middleButtons: [0, 0, 0, 0, 0],
+    allButton: false,
+    middleButtons: [false, false, false, false],
     dropDown1CheckBoxes: [false, false, false, false],
     dropDownActive: false,
     checkBoxContent: [],
@@ -12,16 +12,15 @@ export const buttonsSlice = createSlice({
   reducers: {
     setSelectedAllButton: (state, action) => {
       state.allButton = action.payload;
-      state.middleButtons = [0, 0, 0, 0, 0];
-      state.dropDown1CheckBoxes = [0, 0, 0, 0];
+      state.middleButtons = [false, false, false, false];
+      state.dropDown1CheckBoxes = [false, false, false, false];
       state.checkBoxContent = [];
     },
     setSelectedMiddleButton: (state, action) => {
       state.middleButtons[action.payload.nth] = action.payload.action;
-      state.allButton = 0;
+      state.allButton = false;
     },
     setSelectedCheckbox: (state, action) => {
-      console.log(action);
       state.dropDown1CheckBoxes[action.payload.nth] = action.payload.action;
       action.payload.action
         ? (state.checkBoxContent = state.checkBoxContent.concat(
@@ -31,13 +30,13 @@ export const buttonsSlice = createSlice({
             state.checkBoxContent.indexOf(action.payload.title),
             1
           );
-      state.allButton = 0;
+      state.allButton = false;
     },
     setSelectedDropdown: (state, action) => {
       state.dropDownActive = action.payload;
     },
     deleteDropdownContent: (state) => {
-      state.dropDown1CheckBoxes = [0, 0, 0, 0];
+      state.dropDown1CheckBoxes = [false, false, false, false];
       state.checkBoxContent = [];
     },
   },

@@ -27,6 +27,7 @@ $fontFamily: Helvetica;
   background-color: $activeBackgroundColor;
   color: $activeButtonFontColor;
 }
+
 .middle-button-container {
   display: flex;
   flex-direction: row;
@@ -35,12 +36,14 @@ $fontFamily: Helvetica;
   font-weight: bold;
   line-height: 15px;
 }
+
 .middle-button-medium {
   width: 51px;
   height: 16px;
   margin-left: $space1;
   margin-top: 6px;
 }
+
 .middle-button-numbers {
   height: 16px;
   width: 34px;
@@ -66,6 +69,7 @@ $fontFamily: Helvetica;
   border: 1px solid #d9e1e8;
   font-family: $fontFamily;
 }
+
 .first-button-active {
   background-color: #1e93f5;
   color: white;
@@ -87,24 +91,28 @@ $fontFamily: Helvetica;
   font-family: $fontFamily;
   display: flex;
 }
+
 .more-button-active {
   background-color: $activeBackgroundColor;
   color: $activeButtonFontColor;
 }
+
 .rotate {
   transform: none;
   align-self: center;
   margin-right: 10px;
   margin-left: 10px;
 }
+
 .more-button-active .rotate {
   transform: rotate(180deg) scaleX(-1);
 }
 
 .more-button-container {
 }
+
 .dropdown-content {
-  margin-top: 10px;
+  margin-top: 3px;
   display: block;
   background-color: white;
   width: 220px;
@@ -121,6 +129,7 @@ $fontFamily: Helvetica;
   margin-left: $space3;
   font-family: $fontFamily;
 }
+
 .dropdown-content-inactive {
   display: none;
 }
@@ -130,26 +139,37 @@ $fontFamily: Helvetica;
   display: flex;
   padding: 4px 8px 4px 8px;
 }
+
+.checkbox-item-title {
+  color: black;
+}
+
 .dropwdown-item:hover {
   .checkboxOverride label {
     border-color: $activeBackgroundColor;
   }
+  .checkbox-item-title {
+    color: $activeBackgroundColor;
+  }
   background-color: #e0e0e0;
-  color: #1e93f5;
+  color: $activeBackgroundColor;
 }
 //checkbox style
 input[type='checkbox'] {
   visibility: hidden;
 }
+
 .checkboxOverride {
   position: relative;
   width: 15px;
   align-items: center;
   margin-right: 10px;
 }
+
 .checkboxOverride input[type='checkbox']:checked + label:after {
   opacity: 1;
 }
+
 .checkboxOverride label {
   background: none repeat scroll 0 0 white;
   border: 2px solid #c8c8c8;
@@ -159,6 +179,7 @@ input[type='checkbox'] {
   top: 0;
   width: 15px;
 }
+
 .checkboxOverride label:after {
   border-style: none none solid solid;
   content: '';
@@ -172,16 +193,20 @@ input[type='checkbox'] {
   width: 8px;
   left: 2px;
 }
+
 .dropdown-price {
   margin-left: auto;
 }
+
 .dropdown-price:hover {
   text-decoration: underline;
 }
+
 .selected {
   font-size: 10px;
   flex-wrap: wrap;
 }
+
 .selected {
   font-size: 8px;
   font-weight: normal;

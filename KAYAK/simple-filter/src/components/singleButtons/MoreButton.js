@@ -130,7 +130,7 @@ const MoreButton = () => {
                 />
                 <label htmlFor={`checkboxinputOverride-${key}`}></label>
               </div>
-              <div style={{ color: 'black' }}>{item.title}</div>
+              <div className="checkbox-item-title">{item.title}</div>
               <div className="dropdown-price">{item.price}</div>
             </div>
           );
