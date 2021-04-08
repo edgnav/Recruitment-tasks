@@ -102,6 +102,8 @@ $fontFamily: Helvetica;
   align-self: center;
   margin-right: 10px;
   margin-left: 10px;
+  //transition: transform 0.8s ease-in-out;
+  transition-duration: 0.2s;
 }
 
 .more-button-active .rotate {
