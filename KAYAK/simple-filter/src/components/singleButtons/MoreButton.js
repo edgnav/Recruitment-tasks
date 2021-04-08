@@ -35,30 +35,33 @@ const MoreButton = () => {
   const checked = useSelector(
     (state) => state.buttonsReducer.dropDown1CheckBoxes
   );
+  const selected = useSelector((state) => state.buttonsReducer.checkBoxContent);
   const dropdownActive = useSelector(
     (state) => state.buttonsReducer.dropDownActive
   );
 
   const handleChangeCheckBox = (key) => {
-    checked[key] === 1
-      ? dispatch(setSelectedCheckbox({ nth: key, action: 0 }))
-      : dispatch(setSelectedCheckbox({ nth: key, action: 1 }));
+    console.log(!checked[key], checked[key], key, checked);
+    dispatch(
+      setSelectedCheckbox({
+        nth: key,
+        action: !checked[key],
+        title: dropdownItems[key].title,
+      })
+    );
   };
-  const handleDropdown = () => {
-    dropdownActive
-      ? dispatch(setSelectedDropdown(false))
-      : dispatch(setSelectedDropdown(true));
-    console.log(dropdownActive);
-  };
+
   return (
-    <div ref={ref} className="more-button-container">
+    <div ref={ref}>
       <button
         className={
           dropdownActive ? 'more-button more-button-active' : 'more-button'
         }
         onClick={() => dispatch(setSelectedDropdown(!dropdownActive))}
       >
-        <div style={{ float: 'left', marginLeft: '16px' }}>More</div>
+        <div className="more-button-title">
+          More <div className="selected">{selected[0]}</div>
+        </div>
         <div className="rotate">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +104,7 @@ const MoreButton = () => {
                 />
                 <label htmlFor={`checkboxinputOverride-${key}`}></label>
               </div>
-              <div>{item.title}</div>
+              <div style={{ color: 'black' }}>{item.title}</div>
               <div className="dropdown-price">{item.price}</div>
             </div>
           );
