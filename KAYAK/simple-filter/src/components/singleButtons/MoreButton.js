@@ -1,6 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSelectedCheckbox, setSelectedDropdown } from './ButtonsSlice';
+import {
+  setSelectedCheckbox,
+  setSelectedDropdown,
+  deleteDropdownContent,
+} from './ButtonsSlice';
 
 const dropdownItems = [
   {
@@ -21,6 +25,7 @@ const dropdownItems = [
   },
 ];
 const MoreButton = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     var ignoreClickOnMeElement = ref.current;
     document.addEventListener('click', function (event) {
@@ -29,9 +34,8 @@ const MoreButton = () => {
         dispatch(setSelectedDropdown(false));
       }
     });
-  }, []);
+  }, [dispatch]);
   const ref = useRef(null);
-  const dispatch = useDispatch();
   const checked = useSelector(
     (state) => state.buttonsReducer.dropDown1CheckBoxes
   );
@@ -39,9 +43,10 @@ const MoreButton = () => {
   const dropdownActive = useSelector(
     (state) => state.buttonsReducer.dropDownActive
   );
-
+  const handleDelete = () => {
+    dispatch(deleteDropdownContent());
+  };
   const handleChangeCheckBox = (key) => {
-    console.log(!checked[key], checked[key], key, checked);
     dispatch(
       setSelectedCheckbox({
         nth: key,
@@ -55,31 +60,52 @@ const MoreButton = () => {
     <div ref={ref}>
       <button
         className={
-          dropdownActive ? 'more-button more-button-active' : 'more-button'
+          dropdownActive || selected.length > 0
+            ? 'more-button more-button-active'
+            : 'more-button '
         }
         onClick={() => dispatch(setSelectedDropdown(!dropdownActive))}
       >
-        <div className="more-button-title">
-          More <div className="selected">{selected[0]}</div>
+        <div
+          className={
+            selected.length === 0
+              ? 'more-button-title more-button-title-no-margin'
+              : 'more-button-title'
+          }
+        >
+          More{' '}
+          <div className="selected">
+            {selected.length === 0
+              ? ''
+              : selected.length === 1
+              ? selected[0]
+              : `${selected.length} Selected`}
+          </div>
         </div>
         <div className="rotate">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            fontWeight="bold"
-            fill="currentColor"
-            className="bi bi-chevron-down"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M1.646 4.646a.5.5 0 0 1 .708 
+          {selected.length > 0 ? (
+            <div classname="delete-checkbox-content" onClick={handleDelete}>
+              &#x2715;
+            </div>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              fontWeight="bold"
+              fill="currentColor"
+              className="bi bi-chevron-down"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fillRule="evenodd"
+                d="M1.646 4.646a.5.5 0 0 1 .708 
               0L8 10.293l5.646-5.647a.5.5 0 0 
               1 .708.708l-6 6a.5.5 0 0 1-.708 
               0l-6-6a.5.5 0 0 1 0-.708z"
-            />
-          </svg>
+              />
+            </svg>
+          )}
         </div>
       </button>
       <div

@@ -8,7 +8,7 @@ $inactiveButtonFontColor: #51697a;
 $activeButtonFontColor: white;
 $buttonsHeight: 30px;
 $fontFamily: Helvetica;
-//&#10006;
+//
 .middle-button-inactive {
   background-color: $inactiveBackgroundColor;
   width: $middleButtonWidth;
@@ -187,11 +187,19 @@ input[type='checkbox'] {
   font-weight: normal;
   margin-bottom: 5px;
   margin-top: -5px;
-  //display: none;
 }
 
 .more-button-title {
   margin-left: 16px;
   align-self: center;
+
   margin-top: 10px;
+}
+
+.more-button-title-no-margin {
+  margin-top: 0;
+}
+
+.delete-checkbox-content {
+  background-color: black;
 }
