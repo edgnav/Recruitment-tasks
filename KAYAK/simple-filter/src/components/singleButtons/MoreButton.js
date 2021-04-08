@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSelectedCheckbox } from './ButtonsSlice';
+import { setSelectedCheckbox, setSelectedDropdown } from './ButtonsSlice';
 
 const dropdownItems = [
   {
@@ -21,10 +21,22 @@ const dropdownItems = [
   },
 ];
 const MoreButton = () => {
+  useEffect(() => {
+    var ignoreClickOnMeElement = ref.current;
+    document.addEventListener('click', function (event) {
+      var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+      if (!isClickInsideElement) {
+        dispatch(setSelectedDropdown(false));
+      }
+    });
+  }, []);
+  const ref = useRef(null);
   const dispatch = useDispatch();
-  const [focus, setFocus] = useState(false);
   const checked = useSelector(
     (state) => state.buttonsReducer.dropDown1CheckBoxes
+  );
+  const dropdownActive = useSelector(
+    (state) => state.buttonsReducer.dropDownActive
   );
 
   const handleChangeCheckBox = (key) => {
@@ -32,9 +44,20 @@ const MoreButton = () => {
       ? dispatch(setSelectedCheckbox({ nth: key, action: 0 }))
       : dispatch(setSelectedCheckbox({ nth: key, action: 1 }));
   };
+  const handleDropdown = () => {
+    dropdownActive
+      ? dispatch(setSelectedDropdown(false))
+      : dispatch(setSelectedDropdown(true));
+    console.log(dropdownActive);
+  };
   return (
-    <div onBlur={() => setFocus(false)} className="more-button-container">
-      <button className="more-button" onFocus={() => setFocus(true)}>
+    <div ref={ref} className="more-button-container">
+      <button
+        className={
+          dropdownActive ? 'more-button more-button-active' : 'more-button'
+        }
+        onClick={() => dispatch(setSelectedDropdown(!dropdownActive))}
+      >
         <div style={{ float: 'left', marginLeft: '16px' }}>More</div>
         <div className="rotate">
           <svg
@@ -55,31 +78,35 @@ const MoreButton = () => {
             />
           </svg>
         </div>
-        <div className="dropdown-content">
-          {dropdownItems.map((item, key) => {
-            return (
-              <div
-                className="dropwdown-item"
-                onClick={() => handleChangeCheckBox(key)}
-                key={key}
-              >
-                <div className="checkboxOverride">
-                  <input
-                    type="checkbox"
-                    name=""
-                    id={`checkboxinputOverride-${key}`}
-                    checked={checked[key]}
-                    disabled={true}
-                  />
-                  <label htmlFor={`checkboxinputOverride-${key}`}></label>
-                </div>
-                <div>{item.title}</div>
-                <div className="dropdown-price">{item.price}</div>
-              </div>
-            );
-          })}
-        </div>
       </button>
+      <div
+        className={
+          dropdownActive ? ' dropdown-content' : ' dropdown-content-inactive'
+        }
+      >
+        {dropdownItems.map((item, key) => {
+          return (
+            <div
+              className="dropwdown-item"
+              onClick={() => handleChangeCheckBox(key)}
+              key={key}
+            >
+              <div className="checkboxOverride">
+                <input
+                  type="checkbox"
+                  name=""
+                  id={`checkboxinputOverride-${key}`}
+                  checked={checked[key]}
+                  disabled={true}
+                />
+                <label htmlFor={`checkboxinputOverride-${key}`}></label>
+              </div>
+              <div>{item.title}</div>
+              <div className="dropdown-price">{item.price}</div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

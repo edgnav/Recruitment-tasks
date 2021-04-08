@@ -86,24 +86,22 @@ $fontFamily: Helvetica Neue;
   font-family: $fontFamily;
   display: inline-block;
 }
-.more-button:focus {
+.more-button-active {
   background-color: $activeBackgroundColor;
   color: $activeButtonFontColor;
 }
 .rotate {
   transform: none;
 }
-.more-button:focus .rotate {
+.more-button-active .rotate {
   transform: rotate(180deg) scaleX(-1);
 }
 
 .more-button-container {
-  height: 30px;
 }
 .dropdown-content {
   margin-top: 10px;
-  display: none;
-  position: absolute;
+  display: block;
   background-color: white;
   width: 200px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -111,8 +109,8 @@ $fontFamily: Helvetica Neue;
   z-index: 1;
   color: $inactiveButtonFontColor;
 }
-.more-button:focus .dropdown-content {
-  display: block;
+.dropdown-content-inactive {
+  display: none;
 }
 
 .dropwdown-item {

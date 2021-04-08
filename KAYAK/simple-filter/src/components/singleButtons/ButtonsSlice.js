@@ -6,6 +6,7 @@ export const buttonsSlice = createSlice({
     allButton: 0,
     middleButtons: [0, 0, 0, 0, 0],
     dropDown1CheckBoxes: [0, 0, 0, 0],
+    dropDownActive: false,
   },
   reducers: {
     setSelectedAllButton: (state, action) => {
@@ -21,6 +22,9 @@ export const buttonsSlice = createSlice({
       state.dropDown1CheckBoxes[action.payload.nth] = action.payload.action;
       state.allButton = 0;
     },
+    setSelectedDropdown: (state, action) => {
+      state.dropDownActive = action.payload;
+    },
   },
 });
 
@@ -28,6 +32,7 @@ export const {
   setSelectedAllButton,
   setSelectedMiddleButton,
   setSelectedCheckbox,
+  setSelectedDropdown,
 } = buttonsSlice.actions;
 
 export default buttonsSlice.reducer;
