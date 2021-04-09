@@ -100,7 +100,7 @@ const MoreButton = () => {
         </div>
         <div className="rotate">
           {selected.length > 0 ? (
-            <div classname="delete-checkbox-content" onClick={handleDelete}>
+            <div className="delete-checkbox-content" onClick={handleDelete}>
               <svg
                 className="svg-image"
                 role="img"
@@ -110,8 +110,8 @@ const MoreButton = () => {
                 viewBox="0 0 200 200"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M180 37.918L162.082 20L100 82.208L37.918 20L20 37.918L82.208 100L20 162.082L37.918 180L100 117.792L162.082 180L180 162.082L117.792 100z"
                 ></path>
               </svg>
@@ -135,29 +135,31 @@ const MoreButton = () => {
           dropdownActive ? ' dropdown-content' : ' dropdown-content-inactive'
         }
       >
-        {dropdownItems.map((item, key) => {
-          return (
-            <div
-              className="my-dropdown-item"
-              onClick={() => handleChangeCheckBox(key)}
-              key={key}
-            >
-              <div className="checkboxOverride">
-                <input
-                  type="checkbox"
-                  name=""
-                  id={`checkboxinputOverride-${key}`}
-                  checked={checked[key]}
-                  disabled={true}
-                />
-                <label htmlFor={`checkboxinputOverride-${key}`}></label>
+        {dropdownItems &&
+          dropdownItems.map((item, key) => {
+            return (
+              <div
+                className="my-dropdown-item"
+                onClick={() => handleChangeCheckBox(key)}
+                key={key}
+              >
+                <div className="checkboxOverride">
+                  <input
+                    type="checkbox"
+                    name=""
+                    id={`checkboxinputOverride-${key}`}
+                    checked={checked[key] || 0}
+                    disabled={true}
+                    key={key || ''}
+                  />
+                  <label htmlFor={`checkboxinputOverride-${key}`}></label>
+                </div>
+                <img alt="" className="dropdown-image" src={item.image}></img>
+                <div className="checkbox-item-title">{item.title}</div>
+                <div className="dropdown-price">{item.price}</div>
               </div>
-              <img alt="" className="dropdown-image" src={item.image}></img>
-              <div className="checkbox-item-title">{item.title}</div>
-              <div className="dropdown-price">{item.price}</div>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </div>
   );

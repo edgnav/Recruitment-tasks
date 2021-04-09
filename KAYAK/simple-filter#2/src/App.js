@@ -1,6 +1,7 @@
-import AllButtons from './components/AllButtons';
+import Filter from './components/Filter';
+
 function App() {
-  return <AllButtons />;
+  return <Filter />;
 }
 
 export default App;

@@ -1,0 +1,37 @@
+.filter-container {
+  display: inline-flex;
+
+  margin-top: 162px;
+  margin-left: 16px;
+  flex-direction: column;
+}
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  float: right;
+  margin-bottom: 8px;
+}
+.filter-header-button {
+  color: #0080a4;
+  cursor: pointer;
+  font-family: HelveticaNeue-Bold, 'Helvetica Neue', 'Helvetica Neue', Helvetica,
+    Arial, sans-serif;
+  font-weight: 700;
+  line-height: 18px;
+  font-size: 12px;
+}
+.filter-title {
+  color: #212a30;
+  height: 18px;
+  margin-right: 12px;
+  font-family: 'HelveticaNeue-Bold', 'Helvetica Neue', 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 18px;
+  font-size: 12px;
+}
+.buttons-container {
+  display: flex;
+  //
+  //
+}

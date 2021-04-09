@@ -21,6 +21,7 @@ $fontFamily: 'HelveticaNeue-Bold', 'Helvetica Neue', 'Helvetica Neue', Helvetica
   line-height: 16px;
   border: 1px solid #9ba8b0;
   margin-left: $space3;
+  transition: color 0.4s ease-out, background-color 0.4s ease-out;
 }
 .middle-button-inactive:hover {
   border-color: black;
@@ -34,12 +35,11 @@ $fontFamily: 'HelveticaNeue-Bold', 'Helvetica Neue', 'Helvetica Neue', Helvetica
 .middle-button-active {
   background-color: $activeBackgroundColor;
   color: $activeButtonFontColor;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+  transition: color 0.4s ease-out, background-color 0.4s ease-out;
 }
 .middle-button-active:hover {
   background-color: #2c3439;
   color: $activeButtonFontColor;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out;
 }
 
 .middle-button-container {
@@ -79,10 +79,14 @@ $fontFamily: 'HelveticaNeue-Bold', 'Helvetica Neue', 'Helvetica Neue', Helvetica
   display: flex;
 }
 
+.more-button:hover {
+  border-color: black;
+}
+
 .more-button-active {
   background-color: $activeBackgroundColor;
   color: $activeButtonFontColor;
-  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+  transition: color 0.4s ease-out, background-color 0.4s ease-out;
 }
 
 .rotate {
@@ -90,7 +94,7 @@ $fontFamily: 'HelveticaNeue-Bold', 'Helvetica Neue', 'Helvetica Neue', Helvetica
   align-self: center;
   margin-right: 10px;
   margin-left: 10px;
-  transition-duration: 0.2s;
+  transition-duration: 0.1s;
 }
 
 .more-button-active .rotate {
@@ -116,6 +120,7 @@ $fontFamily: 'HelveticaNeue-Bold', 'Helvetica Neue', 'Helvetica Neue', Helvetica
   font-family: $fontFamily;
   transition: transform 200ms ease, opacity 200ms ease;
   border-radius: 8px;
+  position: absolute;
 }
 
 .dropdown-content-inactive {
@@ -127,10 +132,9 @@ $fontFamily: 'HelveticaNeue-Bold', 'Helvetica Neue', 'Helvetica Neue', Helvetica
   display: flex;
   padding: 4px 8px 4px 8px;
   align-items: center;
-  transition: color 200ms ease-out;
   padding-left: 16px;
   padding-right: 16px;
-  transition: color 200ms ease-out;
+  //transition: color 200ms ease-out;
 }
 
 .checkbox-item-title {
