@@ -1,6 +1,7 @@
 import './buttons.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedMiddleButton } from './ButtonsSlice';
+
 const MiddleButton = ({ title, price, nth }) => {
   const dispatch = useDispatch();
   const isActive = useSelector(

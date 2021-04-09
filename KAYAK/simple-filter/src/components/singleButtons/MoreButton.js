@@ -24,6 +24,7 @@ const dropdownItems = [
     price: '$1607',
   },
 ];
+
 const MoreButton = () => {
   const dispatch = useDispatch();
   useEffect(() => {

@@ -1,6 +1,7 @@
 import './buttons.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedAllButton } from './ButtonsSlice';
+
 const FirstButton = () => {
   const dispatch = useDispatch();
   const isActive = useSelector((state) => state.buttonsReducer.allButton);
